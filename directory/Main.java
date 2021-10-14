@@ -25,18 +25,17 @@ public class Main {
             scanner = new Scanner(line);
             scanner.useDelimiter(";");
             while (scanner.hasNext()){
+                scanner.skip("\\d*");
                 String data = scanner.next();
                 if(index == 0)
-                    city.setId(Integer.parseInt(data));
-                else if(index == 1)
                     city.setName(data);
-                else if(index == 2)
+                else if(index == 1)
                     city.setRegion(data);
-                else if(index == 3)
+                else if(index == 2)
                     city.setDistrict(data);
-                else if(index == 4)
+                else if(index == 3)
                     city.setPopulation(Integer.parseInt(data));
-                else if(index == 5)
+                else if(index == 4)
                     city.setFoundation(data);
                 else
                     System.out.println("Некорректные данные: " + data);

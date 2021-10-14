@@ -1,7 +1,6 @@
 package directory;
 
 public class City {
-    private int id;
     private String name;
     private String region;
     private String district;
@@ -14,25 +13,6 @@ public class City {
 
     public void setRegion(String region) {
         this.region = region;
-    }
-
-
-
-   /* public City(int id, String name, String region, String district, int population, String foundation) {
-        this.id = id;
-        this.name = name;
-        this.district = district;
-        this.population = population;
-        this.foundation = foundation;
-        this.region = region;
-    }*/
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -66,9 +46,10 @@ public class City {
     public void setFoundation(String foundation) {
         this.foundation = foundation;
     }
+
     @Override
-    public String toString(){
-        return "ID: " + getId() + ", " + "name=" + getName() + ", " + "region=" + getRegion() + ", " +
+    public String toString() {
+        return "name=" + getName() + ", " + "region=" + getRegion() + ", " +
                 "district=" + getDistrict() + ", " + "population=" +
                 getPopulation() + ", " + "foundation=" + getFoundation();
     }
