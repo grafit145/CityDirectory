@@ -5,10 +5,8 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -45,9 +43,11 @@ public class Main {
             cityList.add(city);
         }
         reader.close();
-        for(City c : cityList){
-            System.out.println(c);
-        }
+        List<City> result = cityList.stream()
+                .sorted(Comparator.comparing(city -> city.toString()))
+                .collect(Collectors.toList());
+        result.forEach(System.out::println);
+
 
     }
 }
