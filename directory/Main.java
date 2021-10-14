@@ -45,6 +45,7 @@ public class Main {
         reader.close();
         List<City> result = cityList.stream()
                 .sorted(Comparator.comparing(city -> city.toString()))
+                .sorted(Comparator.comparing(city -> city.getDistrict()))
                 .collect(Collectors.toList());
         result.forEach(System.out::println);
 
